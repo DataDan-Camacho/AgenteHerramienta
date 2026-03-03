@@ -1,0 +1,99 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Save Data Azure Function",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": " "
+    }
+  ],
+  "paths": {
+    "/save_data": {
+      "post": {
+        "summary": "Save user data",
+        "operationId": "save_data",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "first_name",
+                  "last_name",
+                  "email",
+                  "requirement"
+                ],
+                "properties": {
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "company": {
+                    "type": "string"
+                  },
+                  "requirement": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "default": {
+                  "value": {
+                    "first_name": "Juan",
+                    "last_name": "Lopez",
+                    "email": "Juan.lopez@gmail.com",
+                    "company": "ATP Solutions",
+                    "requirement": "Migrar una Base de Datos a la nube",
+                    "phone_number": "2221250289",
+                    "conversation_id": "123xsdye3"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User data saved successfully",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input data",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error while saving data",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

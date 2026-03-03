@@ -4,7 +4,7 @@ Este repositorio contiene un ejemplo sencillo de cómo invocar una herramienta (
 
 1. Crear una conversación con el cliente de OpenAI de Foundry.
 2. Enviar mensajes al agente configurado en el portal de Foundry.
-3. Capturar respuestas que incluyen llamadas a funciones (`function_call`).
+3. Capturar respuestas que incluyen llamadas a funciones desde el portal de MS Foundry (`function_call`).
 4. Invocar una Azure Function para procesar los datos y devolver el resultado al modelo.
 
 ---
@@ -13,6 +13,7 @@ Este repositorio contiene un ejemplo sencillo de cómo invocar una herramienta (
 
 - `agent.py` – Ejemplo de código que interactúa con el agente, maneja el ciclo de conversación y la llamada a la función.
 - `config.py` – Clase de configuración que carga variables de entorno y valida su presencia.
+- `openapi.json` – Archivo de Especifación OpenAI para la herramienta en el portal.
 - `pyproject.toml` – Archivo de configuración de Python (poetry, dependencias, etc.).
 
 ---
